@@ -195,7 +195,8 @@ export default function DashboardApp({ seedData }: DashboardAppProps) {
       storeRef.current.dispatch(
         initializeFromSeedData({
           baseInputs: seedData.baseInputs,
-          defaultControls: defaultPreset.controls,
+          baselineControls: seedData.company.defaultAssumptions,
+          initialControls: defaultPreset.controls,
         })
       );
       setStoreInitialized(true);

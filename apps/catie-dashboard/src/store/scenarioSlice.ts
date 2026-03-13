@@ -57,11 +57,15 @@ const scenarioSlice = createSlice({
   reducers: {
     initializeFromSeedData(
       state,
-      action: PayloadAction<{ baseInputs: BaseInputs; defaultControls: ControlState }>
+      action: PayloadAction<{
+        baseInputs: BaseInputs;
+        baselineControls: ControlState;
+        initialControls: ControlState;
+      }>
     ) {
       state.baseInputs = action.payload.baseInputs;
-      state.baselineControls = action.payload.defaultControls;
-      state.controls = action.payload.defaultControls;
+      state.baselineControls = action.payload.baselineControls;
+      state.controls = action.payload.initialControls;
       state.scenarioHorizon = 'short_term';
     },
     setControl(

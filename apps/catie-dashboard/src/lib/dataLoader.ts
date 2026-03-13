@@ -30,7 +30,7 @@ type Company = {
   name: string;
   closeTargetBusinessDays: number;
   variancePct?: number;
-  defaultAssumptions: Pick<ControlState, "revenueGrowthPct" | "grossMarginPct" | "fuelIndex" | "collectionsRatePct" | "returnsPct">;
+  defaultAssumptions: ControlState;
 };
 
 export type DashboardSeedData = {
@@ -63,13 +63,7 @@ export async function loadDashboardSeedData(): Promise<DashboardSeedData> {
       name: z.string(),
       closeTargetBusinessDays: z.number(),
       variancePct: z.number().optional(),
-      defaultAssumptions: z.object({
-        revenueGrowthPct: z.number(),
-        grossMarginPct: z.number(),
-        fuelIndex: z.number(),
-        collectionsRatePct: z.number(),
-        returnsPct: z.number(),
-      }),
+      defaultAssumptions: controlStateSchema,
     })
     .parse(JSON.parse(companyRaw));
 
@@ -80,9 +74,9 @@ export async function loadDashboardSeedData(): Promise<DashboardSeedData> {
   });
   const presets = z.array(presetSchema).parse(JSON.parse(presetsRaw));
 
-  // Derive baseline preset for seed EBITDA computation (added for Phase 7)
+  // Derive named baseline preset for initial scenario controls on first load.
   const baselinePreset = presets.find(p => p.id === 'baseline') ?? presets[0];
-  const seedGrossMarginPct = baselinePreset.controls.grossMarginPct;
+  const seedGrossMarginPct = company.defaultAssumptions.grossMarginPct;
 
   const glRows = z.array(glRowSchema).parse(parseCsv(await readDataFile("erp_gl_summary.csv"))) as GLRow[];
   const arRows = z.array(arRowSchema).parse(parseCsv(await readDataFile("ar_aging.csv"))) as ARRow[];

@@ -9,10 +9,16 @@
   "topCustomerRevenueShare": 0.34,
   "closeTargetBusinessDays": 6,
   "defaultAssumptions": {
-    "revenueGrowthPct": 0.03,
-    "grossMarginPct": 0.23,
-    "fuelIndex": 100,
-    "collectionsRatePct": 0.98,
-    "returnsPct": 0.012
+    "revenueGrowthPct": 0.022,
+    "grossMarginPct": 0.218,
+    "fuelIndex": 96,
+    "collectionsRatePct": 0.972,
+    "returnsPct": 0.01,
+    "prioritizeCashMode": false,
+    "conservativeForecastBias": false,
+    "tightenCreditHolds": false,
+    "lateInvoiceHours": 4,
+    "journalLoadMultiplier": 0.92,
+    "inventoryComplexity": false
   }
 }
