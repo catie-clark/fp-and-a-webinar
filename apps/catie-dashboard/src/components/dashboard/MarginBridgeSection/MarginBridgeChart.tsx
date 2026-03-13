@@ -61,15 +61,27 @@ interface MarginBridgeChartProps {
 }
 
 export default function MarginBridgeChart({ chartData, isDark }: MarginBridgeChartProps) {
+  const values = chartData.map((entry) => entry.value);
+  const minValue = Math.min(...values, 0);
+  const maxValue = Math.max(...values, 0);
+  const yAxisDomain: [number, number] =
+    minValue >= 0
+      ? [0, maxValue === 0 ? 1 : maxValue * 1.12]
+      : [minValue * 1.12, maxValue === 0 ? 1 : maxValue * 1.08];
+  const yAxisTicks = Array.from(
+    new Set([yAxisDomain[0], 0, yAxisDomain[1]].map((value) => Math.round(value)))
+  ).sort((a, b) => a - b);
+
   return (
     <ResponsiveContainer width="100%" height={280}>
-      <BarChart data={chartData} margin={{ top: 28, right: 20, bottom: 8, left: 20 }}>
+      <BarChart data={chartData} margin={{ top: 28, right: 20, bottom: 18, left: 20 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
         <XAxis
           dataKey="name"
           tick={{ fill: 'var(--muted-foreground)', fontSize: 11 }}
           axisLine={false}
           tickLine={false}
+          tickMargin={12}
         />
         <YAxis
           tickFormatter={(v: number) => formatCurrency(v, true)}
@@ -77,13 +89,14 @@ export default function MarginBridgeChart({ chartData, isDark }: MarginBridgeCha
           axisLine={false}
           tickLine={false}
           width={64}
+          domain={yAxisDomain}
+          ticks={yAxisTicks}
         />
         <ReferenceLine y={0} stroke="var(--border)" strokeDasharray="4 2" />
         <Tooltip content={<MarginBridgeTooltip />} />
         <Bar
           dataKey="value"
-          isAnimationActive={true}
-          animationDuration={300}
+          isAnimationActive={false}
           radius={[4, 4, 0, 0]}
         >
           {chartData.map((entry, index) => (

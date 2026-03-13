@@ -99,7 +99,11 @@ function TabContent({ seedData, activeTab, storeInitialized, reducedMotion }: Ta
         <div>
           <SceneNarrative tabId="charts" presetName={activePresetName} seedData={seedData} />
           <ChartsSection seedData={seedData} />
-          {storeInitialized && <MarginBridgeSection />}
+          {storeInitialized && (
+            <div style={{ marginTop: '2rem' }}>
+              <MarginBridgeSection />
+            </div>
+          )}
         </div>
       )}
 

@@ -163,4 +163,56 @@ describe('margin bridge selectors', () => {
     });
     expect(Math.abs(selectOtherLeversImpact(state))).toBeLessThan(5);
   });
+
+  it('other levers become materially visible when operational controls move', () => {
+    if (selectorError) throw selectorError;
+    const baselineControls = {
+      revenueGrowthPct: 0.03,
+      grossMarginPct: 0.25,
+      fuelIndex: 118,
+      collectionsRatePct: 0.97,
+      returnsPct: 0.012,
+      lateInvoiceHours: 4,
+      journalLoadMultiplier: 1.0,
+      prioritizeCashMode: false,
+      conservativeForecastBias: false,
+      tightenCreditHolds: false,
+      inventoryComplexity: false,
+    };
+
+    const state = {
+      scenario: {
+        baseInputs: {
+          baseNetSales: 9_200_000,
+          baseOpex: 1_800_000,
+          baseEbitda: 500_000,
+          baseGrossMarginPct: 0.25,
+          baseCash: 1_200_000,
+          arTotal: 2_400_000,
+          apTotal: 1_100_000,
+          inventoryTotal: 1_800_000,
+          manualJeCount: 42,
+          closeAdjustmentsCount: 18,
+          pipelineExecutionRatio: 0.9,
+          variancePct: 0.034,
+          baseCashInWeekly: 175_000,
+        },
+        baselineControls,
+        controls: {
+          ...baselineControls,
+          collectionsRatePct: 0.94,
+          returnsPct: 0.018,
+          lateInvoiceHours: 10,
+          journalLoadMultiplier: 1.25,
+          prioritizeCashMode: true,
+          conservativeForecastBias: true,
+          tightenCreditHolds: true,
+          inventoryComplexity: true,
+        },
+        scenarioHorizon: 'short_term',
+      },
+    };
+
+    expect(Math.abs(selectOtherLeversImpact(state))).toBeGreaterThan(10_000);
+  });
 });

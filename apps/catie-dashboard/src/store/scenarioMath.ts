@@ -13,6 +13,8 @@ type HorizonWeights = {
   fuelIndex: number;
   collectionsRate: number;
   returnsPct: number;
+  lateInvoiceHours: number;
+  journalLoadMultiplier: number;
   prioritizeCashMode: number;
   conservativeForecastBias: number;
   tightenCreditHolds: number;
@@ -46,6 +48,8 @@ const HORIZON_WEIGHTS: Record<ScenarioHorizon, HorizonWeights> = {
     fuelIndex: 0.65,
     collectionsRate: 0.75,
     returnsPct: 0.45,
+    lateInvoiceHours: 0.75,
+    journalLoadMultiplier: 0.8,
     prioritizeCashMode: 0.7,
     conservativeForecastBias: 0.55,
     tightenCreditHolds: 0.65,
@@ -57,6 +61,8 @@ const HORIZON_WEIGHTS: Record<ScenarioHorizon, HorizonWeights> = {
     fuelIndex: 1,
     collectionsRate: 1,
     returnsPct: 1,
+    lateInvoiceHours: 1,
+    journalLoadMultiplier: 1,
     prioritizeCashMode: 1,
     conservativeForecastBias: 1,
     tightenCreditHolds: 1,
@@ -92,11 +98,16 @@ export function calculateScenarioMetrics(
     cogsAtMargin * FUEL_COGS_SHARE * (fuelIndex / FUEL_BASE_INDEX - 1);
   const cogs = cogsAtMargin + fuelDelta;
   const grossProfit = netSales - cogs;
-  const ebitda = grossProfit - base.baseOpex;
 
   const collectionsDelta =
     (controls.collectionsRatePct - baselineControls.collectionsRatePct) *
     weights.collectionsRate;
+  const lateInvoiceHoursDelta =
+    (controls.lateInvoiceHours - baselineControls.lateInvoiceHours) *
+    weights.lateInvoiceHours;
+  const journalLoadDelta =
+    (controls.journalLoadMultiplier - baselineControls.journalLoadMultiplier) *
+    weights.journalLoadMultiplier;
   const prioritizeCashDelta =
     flagDelta(controls.prioritizeCashMode, baselineControls.prioritizeCashMode) *
     weights.prioritizeCashMode;
@@ -113,6 +124,22 @@ export function calculateScenarioMetrics(
   const inventoryDelta =
     flagDelta(controls.inventoryComplexity, baselineControls.inventoryComplexity) *
     weights.inventoryComplexity;
+
+  // Roll operational scenario controls into EBITDA so the residual "All Other Levers"
+  // bar reflects real close-friction and working-capital tradeoffs.
+  const otherLeversOperationalImpact =
+    collectionsDelta * base.arTotal * 0.035 -
+    (controls.returnsPct - baselineControls.returnsPct) *
+      weights.returnsPct *
+      base.baseNetSales -
+    lateInvoiceHoursDelta * base.manualJeCount * 220 -
+    journalLoadDelta * base.closeAdjustmentsCount * 1600 -
+    prioritizeCashDelta * base.baseNetSales * 0.0012 -
+    tightenCreditDelta * base.baseNetSales * 0.0018 -
+    conservativeDelta * base.baseNetSales * 0.0015 -
+    inventoryDelta * base.inventoryTotal * 0.025;
+
+  const ebitda = grossProfit - base.baseOpex + otherLeversOperationalImpact;
 
   const cash =
     base.baseCash +
