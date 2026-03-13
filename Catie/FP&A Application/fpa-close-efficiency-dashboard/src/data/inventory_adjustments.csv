@@ -1,0 +1,19 @@
+adj_id,period,item,quantity,amount
+ADJ-001,Jan-2026,Diesel Fuel Reserve,500,22500
+ADJ-002,Jan-2026,Pallet Racking Units,12,14400
+ADJ-003,Jan-2026,Forklift Replacement Parts,8,-3200
+ADJ-004,Jan-2026,Warehouse Safety Equipment,25,6250
+ADJ-005,Jan-2026,Fleet Tires (Heavy Duty),20,18000
+ADJ-006,Jan-2026,Cargo Straps and Binders,200,-1600
+ADJ-007,Jan-2026,Brake Components - Fleet,-15,-8700
+ADJ-008,Jan-2026,Office Supplies and Labels,400,1200
+ADJ-009,Jan-2026,Loading Dock Seals,6,4800
+ADJ-010,Jan-2026,Hydraulic Fluid (drums),40,8000
+ADJ-011,Jan-2026,Refrigeration Unit Filters,30,-2400
+ADJ-012,Jan-2026,Warehouse Consumables Write-off,0,-8000
+ADJ-013,Jan-2026,Packaging Materials,1500,7500
+ADJ-014,Jan-2026,Generator Fuel Reserve,200,9000
+ADJ-015,Jan-2026,Hand Truck Fleet Repair,-8,-3600
+ADJ-016,Jan-2026,Bulk Lubricants,75,3750
+ADJ-017,Jan-2026,Dock Plates and Levelers,4,45000
+ADJ-018,Jan-2026,Inspection Equipment,10,-2200

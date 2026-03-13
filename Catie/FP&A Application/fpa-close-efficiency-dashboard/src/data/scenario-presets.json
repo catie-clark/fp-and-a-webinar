@@ -1,0 +1,104 @@
+[
+  {
+    "id": "baseline",
+    "label": "Jan 2026 Baseline",
+    "controls": {
+      "revenueGrowthPct": 0.03,
+      "grossMarginPct": 0.25,
+      "fuelIndex": 118,
+      "collectionsRatePct": 0.97,
+      "returnsPct": 0.012,
+      "lateInvoiceHours": 4,
+      "journalLoadMultiplier": 1.0,
+      "prioritizeCashMode": false,
+      "conservativeForecastBias": false,
+      "tightenCreditHolds": false,
+      "inventoryComplexity": false
+    }
+  },
+  {
+    "id": "conservative",
+    "label": "Conservative Close",
+    "controls": {
+      "revenueGrowthPct": 0.00,
+      "grossMarginPct": 0.25,
+      "fuelIndex": 118,
+      "collectionsRatePct": 0.97,
+      "returnsPct": 0.012,
+      "lateInvoiceHours": 2,
+      "journalLoadMultiplier": 0.9,
+      "prioritizeCashMode": false,
+      "conservativeForecastBias": true,
+      "tightenCreditHolds": true,
+      "inventoryComplexity": false
+    }
+  },
+  {
+    "id": "q4-push",
+    "label": "Q4 Push for Target",
+    "controls": {
+      "revenueGrowthPct": 0.065,
+      "grossMarginPct": 0.24,
+      "fuelIndex": 118,
+      "collectionsRatePct": 0.96,
+      "returnsPct": 0.018,
+      "lateInvoiceHours": 11,
+      "journalLoadMultiplier": 1.25,
+      "prioritizeCashMode": false,
+      "conservativeForecastBias": false,
+      "tightenCreditHolds": false,
+      "inventoryComplexity": false
+    }
+  },
+  {
+    "id": "fuel-shock",
+    "label": "Fuel Cost Shock",
+    "controls": {
+      "revenueGrowthPct": 0.03,
+      "grossMarginPct": 0.22,
+      "fuelIndex": 137,
+      "collectionsRatePct": 0.97,
+      "returnsPct": 0.012,
+      "lateInvoiceHours": 4,
+      "journalLoadMultiplier": 1.0,
+      "prioritizeCashMode": false,
+      "conservativeForecastBias": false,
+      "tightenCreditHolds": false,
+      "inventoryComplexity": false
+    }
+  },
+  {
+    "id": "cash-mode",
+    "label": "Cash Preservation Mode",
+    "controls": {
+      "revenueGrowthPct": 0.01,
+      "grossMarginPct": 0.25,
+      "fuelIndex": 118,
+      "collectionsRatePct": 0.99,
+      "returnsPct": 0.010,
+      "lateInvoiceHours": 2,
+      "journalLoadMultiplier": 0.9,
+      "prioritizeCashMode": true,
+      "conservativeForecastBias": false,
+      "tightenCreditHolds": true,
+      "inventoryComplexity": false
+    }
+  },
+  {
+    "id": "optimistic",
+    "label": "Optimistic Recovery",
+    "controls": {
+      "revenueGrowthPct": 0.06,
+      "grossMarginPct": 0.27,
+      "fuelIndex": 105,
+      "collectionsRatePct": 0.99,
+      "returnsPct": 0.009,
+      "lateInvoiceHours": 2,
+      "journalLoadMultiplier": 0.9,
+      "prioritizeCashMode": false,
+      "conservativeForecastBias": false,
+      "tightenCreditHolds": false,
+      "inventoryComplexity": false
+    }
+  }
+]

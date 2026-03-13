@@ -1,0 +1,3 @@
+# Root repo gitignore
+node_modules/
+.vite/

@@ -1,0 +1,99 @@
+je_id,period,account,description,amount,stage,status
+JE-001,Jan-2026,Accounts Payable - Trade,,85000,AP close,posted
+JE-002,Jan-2026,Freight Payable - Interstate,,120000,AP close,posted
+JE-003,Jan-2026,Fuel Expense - Fleet,,65000,AP close,posted
+JE-004,Jan-2026,Accounts Payable - Vendors,,45000,AP close,posted
+JE-005,Jan-2026,Accrued AP - Utilities,,28000,AP close,posted
+JE-006,Jan-2026,Accounts Payable - Trade,,180000,AP close,posted
+JE-007,Jan-2026,Freight Payable - Local,,38000,AP close,posted
+JE-008,Jan-2026,AP - Equipment Lease,,55000,AP close,posted
+JE-009,Jan-2026,Accounts Payable - Misc,,15000,AP close,posted
+JE-010,Jan-2026,Fuel Expense Accrual,,72000,AP close,approved
+JE-011,Jan-2026,Freight Payable - Inbound,,48000,AP close,approved
+JE-012,Jan-2026,Accounts Payable - Suppliers,,95000,AP close,approved
+JE-013,Jan-2026,AP - Insurance Premium,,18000,AP close,approved
+JE-014,Jan-2026,Accrued AP - Maintenance,,32000,AP close,approved
+JE-015,Jan-2026,Accounts Payable - Contractors,,42000,AP close,pending-approval
+JE-016,Jan-2026,Fuel Accrual - Adjustment,,22000,AP close,pending-approval
+JE-017,Jan-2026,AP - Disputed Invoices,,48000,AP close,pending-approval
+JE-018,Jan-2026,Accounts Payable - Pending,,35000,AP close,draft
+JE-019,Jan-2026,Accounts Receivable - Trade,,48000,AR close,posted
+JE-020,Jan-2026,Customer Receipts - Lockbox,,92000,AR close,posted
+JE-021,Jan-2026,AR - Collections Adjustment,,15000,AR close,posted
+JE-022,Jan-2026,Accounts Receivable - Freight,,62000,AR close,posted
+JE-023,Jan-2026,Customer Receipts - Wire,,38000,AR close,posted
+JE-024,Jan-2026,AR - Credit Memo,,28000,AR close,posted
+JE-025,Jan-2026,Accounts Receivable - Misc,,8000,AR close,posted
+JE-026,Jan-2026,AR - Deferred Revenue,,45000,AR close,posted
+JE-027,Jan-2026,Customer Deposits - Applied,,35000,AR close,approved
+JE-028,Jan-2026,AR - Bad Debt Provision,,12000,AR close,approved
+JE-029,Jan-2026,Accounts Receivable - Other,,55000,AR close,approved
+JE-030,Jan-2026,AR - Allowance Adjustment,,18000,AR close,approved
+JE-031,Jan-2026,Customer Receipts - ACH,,72000,AR close,approved
+JE-032,Jan-2026,AR - Write-off,,9000,AR close,approved
+JE-033,Jan-2026,Accounts Receivable - Disputed,,25000,AR close,pending-approval
+JE-034,Jan-2026,AR - Unapplied Receipts,,40000,AR close,pending-approval
+JE-035,Jan-2026,Customer Adjustment - Pending,,16000,AR close,pending-approval
+JE-036,Jan-2026,AR - Credit Hold Release,,22000,AR close,draft
+JE-037,Jan-2026,Accounts Receivable - Review,,33000,AR close,draft
+JE-038,Jan-2026,AR - Pending Write-off,,11000,AR close,draft
+JE-039,Jan-2026,Revenue - Freight Services,,95000,Revenue recognition,posted
+JE-040,Jan-2026,Revenue - Logistics Management,,65000,Revenue recognition,posted
+JE-041,Jan-2026,Revenue Recognition - Adjustment,,42000,Revenue recognition,posted
+JE-042,Jan-2026,Deferred Revenue - Release,,128000,Revenue recognition,posted
+JE-043,Jan-2026,Revenue - Contract Services,,55000,Revenue recognition,posted
+JE-044,Jan-2026,Revenue - Fuel Surcharge,,38000,Revenue recognition,posted
+JE-045,Jan-2026,Revenue - Storage Fees,,22000,Revenue recognition,approved
+JE-046,Jan-2026,Revenue Recognition - POC,,85000,Revenue recognition,approved
+JE-047,Jan-2026,Revenue - Accessorial Charges,,30000,Revenue recognition,approved
+JE-048,Jan-2026,Deferred Revenue - Adjustment,,48000,Revenue recognition,approved
+JE-049,Jan-2026,Revenue - Disputed Contracts,,20000,Revenue recognition,pending-approval
+JE-050,Jan-2026,Revenue Recognition - Review,,150000,Revenue recognition,pending-approval
+JE-051,Jan-2026,Revenue - Pending Milestone,,35000,Revenue recognition,pending-approval
+JE-052,Jan-2026,Revenue - Draft Adjustment,,72000,Revenue recognition,draft
+JE-053,Jan-2026,Revenue Recognition - Pending,,28000,Revenue recognition,draft
+JE-054,Jan-2026,Inventory - Finished Goods,,42000,Inventory valuation,posted
+JE-055,Jan-2026,Inventory - Raw Materials,,58000,Inventory valuation,posted
+JE-056,Jan-2026,Inventory Valuation - Adjustment,,25000,Inventory valuation,posted
+JE-057,Jan-2026,Inventory - Obsolescence Reserve,,38000,Inventory valuation,posted
+JE-058,Jan-2026,Inventory - Cost of Goods,,80000,Inventory valuation,posted
+JE-059,Jan-2026,Inventory Shrinkage - Actual,,12000,Inventory valuation,posted
+JE-060,Jan-2026,Inventory - FIFO Adjustment,,35000,Inventory valuation,approved
+JE-061,Jan-2026,Inventory Valuation - Write-down,,28000,Inventory valuation,approved
+JE-062,Jan-2026,Inventory - Lower of Cost,,45000,Inventory valuation,approved
+JE-063,Jan-2026,Inventory Reserve - Adjustment,,18000,Inventory valuation,approved
+JE-064,Jan-2026,Inventory - Pending Count,,30000,Inventory valuation,pending-approval
+JE-065,Jan-2026,Inventory Adjustment - Review,,22000,Inventory valuation,pending-approval
+JE-066,Jan-2026,Inventory - Disputed Valuation,,55000,Inventory valuation,pending-approval
+JE-067,Jan-2026,Inventory Write-off - Pending,,15000,Inventory valuation,pending-approval
+JE-068,Jan-2026,Inventory - Draft Adjustment,,5000,Inventory valuation,draft
+JE-069,Jan-2026,Inventory Valuation - Pending,,40000,Inventory valuation,draft
+JE-070,Jan-2026,Inventory - Under Review,,62000,Inventory valuation,draft
+JE-071,Jan-2026,Accrued Payroll,,38000,Accruals & JEs,posted
+JE-072,Jan-2026,Accrued Bonus - Q1,,55000,Accruals & JEs,posted
+JE-073,Jan-2026,Accrued Interest Expense,,12000,Accruals & JEs,posted
+JE-074,Jan-2026,Prepaid Expense - Amortization,,8000,Accruals & JEs,posted
+JE-075,Jan-2026,Accrued Property Tax,,25000,Accruals & JEs,posted
+JE-076,Jan-2026,Accrued Benefits - Health,,18000,Accruals & JEs,approved
+JE-077,Jan-2026,Depreciation - Fleet,,80000,Accruals & JEs,approved
+JE-078,Jan-2026,Accrued Commission,,42000,Accruals & JEs,approved
+JE-079,Jan-2026,Accrued Rent - Warehouse,,35000,Accruals & JEs,pending-approval
+JE-080,Jan-2026,Accrued Insurance Premium,,22000,Accruals & JEs,pending-approval
+JE-081,Jan-2026,Accrued Utilities - Estimate,,16000,Accruals & JEs,pending-approval
+JE-082,Jan-2026,Accrued Repairs - Pending,,28000,Accruals & JEs,draft
+JE-083,Jan-2026,Accrued Misc - Review,,9000,Accruals & JEs,draft
+JE-084,Jan-2026,Income Statement Review,,12000,Financial statement package,posted
+JE-085,Jan-2026,Balance Sheet Reconciliation,,8000,Financial statement package,posted
+JE-086,Jan-2026,Financial Statement - Adjustment,,15000,Financial statement package,posted
+JE-087,Jan-2026,FS Package - Disclosure,,5000,Financial statement package,posted
+JE-088,Jan-2026,Financial Review - Controller,,10000,Financial statement package,approved
+JE-089,Jan-2026,FS Package - Footnotes,,7000,Financial statement package,approved
+JE-090,Jan-2026,Financial Statement - Reclass,,20000,Financial statement package,approved
+JE-091,Jan-2026,FS Package - Pending Approval,,25000,Financial statement package,pending-approval
+JE-092,Jan-2026,Financial Review - CFO,,18000,Financial statement package,pending-approval
+JE-093,Jan-2026,FS Package - Draft Submission,,14000,Financial statement package,pending-approval
+JE-094,Jan-2026,Financial Statement - Pending,,22000,Financial statement package,pending-approval
+JE-095,Jan-2026,FS Package - Audit Review,,30000,Financial statement package,pending-approval
+JE-096,Jan-2026,Financial Statement - Draft,,3000,Financial statement package,draft
+JE-097,Jan-2026,FS Package - Under Review,,11000,Financial statement package,draft
+JE-098,Jan-2026,Financial Statement - Pending Sign,,16000,Financial statement package,draft

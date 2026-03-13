@@ -1,0 +1,3 @@
+period,net_sales,cogs,gross_profit,ebitda,opex,cash,ap_total,inventory_total,manual_je_count,close_adjustments_count
+Dec-2025,8900000,6497000,2403000,1246000,1157000,4680000,2980000,6210000,38,17
+Jan-2026,9200000,6900000,2300000,1120000,1180000,4250000,3100000,6400000,47,23

@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root,
+html[data-theme="light"] {
+  --background: #f7f3ea;
+  --foreground: #1c2d47;
+  --card: #fffaf2cc;
+  --surface: #fffdf8;
+  --accent: #f5a800;
+  --accent-soft: #ffd23126;
+  --muted: #5e6b80;
+  --border: #d7dce5;
+  --track: #d7deea;
+  --shadow: #011e41;
+  --muted-color: #60728f;
+}
+
+html[data-theme="dark"] {
+  --background: #0f1b2f;
+  --foreground: #e7eef8;
+  --card: #17263be0;
+  --surface: #1f324f;
+  --accent: #ffd231;
+  --accent-soft: #ffd2311c;
+  --muted: #abc0dd;
+  --border: #2e4768;
+  --track: #2a4464;
+  --shadow: #000000;
+  --muted-color: #9ab2d4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at 10% 10%, #ffd2311f, transparent 35%),
+    radial-gradient(circle at 90% 0%, #003f9f22, transparent 40%),
+    linear-gradient(145deg, #ffffff10, #00000005),
+    var(--background);
+  font-family: "Helvetica Now Display", "Helvetica Now Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── KPI Card Amber Glow Animation ─── */
+/* Fires when a KPI card's computed value changes via scenario slider. */
+/* Triggered by .kpi-glow class toggle in KpiCard.tsx useEffect. */
+/* Guard: KpiCard.tsx only adds class if prevValueRef.current !== null && !== value (no first-render glow). */
+@keyframes kpi-amber-glow {
+  0%   { box-shadow: 0 0 0 0 rgba(245, 168, 0, 0.0); }
+  20%  { box-shadow: 0 0 8px 8px rgba(245, 168, 0, 0.45); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 168, 0, 0.0); }
+}
+
+.kpi-glow {
+  animation: kpi-amber-glow 700ms ease-out forwards;
+}
