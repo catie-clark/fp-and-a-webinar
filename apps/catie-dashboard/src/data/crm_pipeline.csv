@@ -1,0 +1,6 @@
+opp_id,stage,expected_close_date,probability,amount_usd,segment
+OPP-101,Commit,2026-02-15,0.82,340000,Top25
+OPP-102,BestCase,2026-02-19,0.63,210000,MidMarket
+OPP-103,Pipeline,2026-02-28,0.45,180000,LongTail
+OPP-104,Commit,2026-03-10,0.78,390000,MidMarket
+OPP-105,BestCase,2026-03-22,0.6,240000,Top25

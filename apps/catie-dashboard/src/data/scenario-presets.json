@@ -1,0 +1,70 @@
+[
+  {
+    "id": "baseline",
+    "label": "Baseline",
+    "controls": {
+      "revenueGrowthPct": 0.03,
+      "grossMarginPct": 0.23,
+      "fuelIndex": 100,
+      "collectionsRatePct": 0.98,
+      "returnsPct": 0.012,
+      "prioritizeCashMode": true,
+      "conservativeForecastBias": false,
+      "tightenCreditHolds": false,
+      "lateInvoiceHours": 6,
+      "journalLoadMultiplier": 1.0,
+      "inventoryComplexity": false
+    }
+  },
+  {
+    "id": "fuel_spike",
+    "label": "Fuel Spike + Freight Pressure",
+    "controls": {
+      "revenueGrowthPct": 0.028,
+      "grossMarginPct": 0.22,
+      "fuelIndex": 128,
+      "collectionsRatePct": 0.978,
+      "returnsPct": 0.013,
+      "prioritizeCashMode": true,
+      "conservativeForecastBias": false,
+      "tightenCreditHolds": false,
+      "lateInvoiceHours": 7,
+      "journalLoadMultiplier": 1.05,
+      "inventoryComplexity": false
+    }
+  },
+  {
+    "id": "collections_slip",
+    "label": "Collections Slip (AR Risk)",
+    "controls": {
+      "revenueGrowthPct": 0.026,
+      "grossMarginPct": 0.226,
+      "fuelIndex": 102,
+      "collectionsRatePct": 0.955,
+      "returnsPct": 0.013,
+      "prioritizeCashMode": true,
+      "conservativeForecastBias": true,
+      "tightenCreditHolds": true,
+      "lateInvoiceHours": 8,
+      "journalLoadMultiplier": 1.08,
+      "inventoryComplexity": false
+    }
+  },
+  {
+    "id": "vendor_inflation",
+    "label": "Vendor Inflation + Margin Squeeze",
+    "controls": {
+      "revenueGrowthPct": 0.02,
+      "grossMarginPct": 0.205,
+      "fuelIndex": 114,
+      "collectionsRatePct": 0.972,
+      "returnsPct": 0.018,
+      "prioritizeCashMode": false,
+      "conservativeForecastBias": true,
+      "tightenCreditHolds": false,
+      "lateInvoiceHours": 9,
+      "journalLoadMultiplier": 1.15,
+      "inventoryComplexity": true
+    }
+  }
+]

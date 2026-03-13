@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root,
+html[data-theme="light"] {
+  --crowe-amber-core: #f5a800;
+  --crowe-indigo-dark: #011e41;
+  --crowe-white: #ffffff;
+  --crowe-tint-mid: #828282;
+  --crowe-tint-lightest: #e0e0e0;
+  --background: #f5f6f8;
+  --foreground: #1c2d47;
+  --card: #ffffffee;
+  --card-solid: #ffffff;
+  --surface: #f7f8fa;
+  --accent: #f5a800;
+  --accent-soft: #ffd23126;
+  --muted: #5e6b80;
+  --border: #d5dbe4;
+  --track: #d7deea;
+  --shadow: #011e41;
+  --muted-color: #60728f;
+  --muted-foreground: var(--muted-color);
+  --color-success: #05AB8C;
+  --color-error: #E5376B;
+}
+
+html[data-theme="dark"] {
+  --crowe-amber-core: #f5a800;
+  --crowe-indigo-dark: #011e41;
+  --crowe-white: #ffffff;
+  --crowe-tint-mid: #bdbdbd;
+  --crowe-tint-lightest: #2e4768;
+  --background: #081528;
+  --foreground: #e7eef8;
+  --card: #17263be0;
+  --card-solid: #17263b;
+  --surface: #1f324f;
+  --accent: #ffd231;
+  --accent-soft: #ffd2311c;
+  --muted: #abc0dd;
+  --border: #2e4768;
+  --track: #2a4464;
+  --shadow: #000000;
+  --muted-color: #9ab2d4;
+  --muted-foreground: var(--muted-color);
+  --color-success: #16D9BC;
+  --color-error: #FF526F;
+}
+
+/* ─── shadcn compatibility — radius token only ─── */
+/* Components use existing Crowe CSS variables directly (var(--accent), var(--border), etc.). */
+/* --radius is the only new token needed; all other shadcn HSL tokens are skipped to avoid conflict. */
+:root,
+html[data-theme="light"],
+html[data-theme="dark"] {
+  --radius: 0.625rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(245, 168, 0, 0.08), transparent 28%),
+    radial-gradient(circle at 92% 2%, rgba(0, 63, 159, 0.1), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0)),
+    var(--background);
+  font-family: "Helvetica Now Display", "Helvetica Now Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── KPI Card Amber Glow Animation ─── */
+/* Fires when a KPI card's computed value changes via scenario slider. */
+/* Triggered by .kpi-glow class toggle in KpiCard.tsx useEffect. */
+/* Guard: KpiCard.tsx only adds class if prevValueRef.current !== null && !== value (no first-render glow). */
+@keyframes kpi-amber-glow {
+  0%   { box-shadow: 0 0 0 0 rgba(245, 168, 0, 0.0); }
+  20%  { box-shadow: 0 0 8px 8px rgba(245, 168, 0, 0.45); }
+  100% { box-shadow: 0 0 0 0 rgba(245, 168, 0, 0.0); }
+}
+
+.kpi-glow {
+  animation: kpi-amber-glow 700ms ease-out forwards;
+}
+
+/* ─── AI SUMMARY: blinking cursor animation ─────────────────────── */
+@keyframes blink-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.streaming-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--foreground);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink-cursor 1s step-end infinite;
+}

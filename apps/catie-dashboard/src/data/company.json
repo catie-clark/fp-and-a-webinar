@@ -1,0 +1,18 @@
+{
+  "companyId": "slg",
+  "name": "Summit Logistics Group",
+  "hq": "Fort Wayne, IN",
+  "industry": "Mid-market industrial distribution",
+  "annualRevenueUSD": 185000000,
+  "employees": 430,
+  "activeCustomers": 1250,
+  "topCustomerRevenueShare": 0.34,
+  "closeTargetBusinessDays": 6,
+  "defaultAssumptions": {
+    "revenueGrowthPct": 0.03,
+    "grossMarginPct": 0.23,
+    "fuelIndex": 100,
+    "collectionsRatePct": 0.98,
+    "returnsPct": 0.012
+  }
+}
