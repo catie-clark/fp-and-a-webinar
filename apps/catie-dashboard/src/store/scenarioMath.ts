@@ -73,6 +73,11 @@ const HORIZON_WEIGHTS: Record<ScenarioHorizon, HorizonWeights> = {
 const flagDelta = (value: boolean, baseline: boolean) =>
   (value ? 1 : 0) - (baseline ? 1 : 0);
 
+function normalizeBridgeImpact(value: number): number {
+  const rounded = Math.round(value);
+  return Math.abs(rounded) < 1 ? 0 : rounded;
+}
+
 export function getScenarioHorizonLabel(horizon: ScenarioHorizon): string {
   return horizon === 'long_term' ? 'Long Term (1 year)' : 'Short Term (13 weeks)';
 }
@@ -212,19 +217,23 @@ export function calculateMarginBridgeImpacts(
       ((adjustedFuelIndex - baselineFuelIndex) / FUEL_BASE_INDEX)
     ) || 0;
 
+  const revenueGrowthImpactNormalized = normalizeBridgeImpact(revenueGrowthImpact);
+  const grossMarginImpactNormalized = normalizeBridgeImpact(grossMarginImpact);
+  const fuelIndexImpactNormalized = normalizeBridgeImpact(fuelIndexImpact);
   const otherLeversImpact =
     adjustedMetrics.ebitda -
     baselineMetrics.ebitda -
-    revenueGrowthImpact -
-    grossMarginImpact -
-    fuelIndexImpact;
+    revenueGrowthImpactNormalized -
+    grossMarginImpactNormalized -
+    fuelIndexImpactNormalized;
+  const otherLeversImpactNormalized = normalizeBridgeImpact(otherLeversImpact);
 
   return {
-    baselineEbitda: baselineMetrics.ebitda,
-    adjustedEbitda: adjustedMetrics.ebitda,
-    revenueGrowthImpact,
-    grossMarginImpact,
-    fuelIndexImpact,
-    otherLeversImpact,
+    baselineEbitda: normalizeBridgeImpact(baselineMetrics.ebitda),
+    adjustedEbitda: normalizeBridgeImpact(adjustedMetrics.ebitda),
+    revenueGrowthImpact: revenueGrowthImpactNormalized,
+    grossMarginImpact: grossMarginImpactNormalized,
+    fuelIndexImpact: fuelIndexImpactNormalized,
+    otherLeversImpact: otherLeversImpactNormalized,
   };
 }

@@ -106,7 +106,7 @@ export interface MarginBridgeBar {
 
 /** Returns '+$340K' for positive, '–$420K' for negative, null for zero. */
 function formatBridgeLabel(value: number): string | null {
-  if (value === 0) return null;
+  if (Math.abs(value) < 1000) return null;
   const formatted = formatCurrency(Math.abs(value), true);
   return value > 0 ? `+${formatted}` : `\u2013${formatted}`; // \u2013 = en dash
 }
