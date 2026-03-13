@@ -28,12 +28,14 @@ export function CloseTracker({ seedData }: CloseTrackerProps) {
           size="sm"
           onClick={() => window.open('https://ai-close-demo.vercel.app/', '_blank', 'noopener,noreferrer')}
           style={{
-            borderRadius: 12,
-            minHeight: '2.5rem',
-            paddingInline: '1rem',
-            fontSize: '0.75rem',
+            borderRadius: '999px',
+            minHeight: '2.75rem',
+            paddingInline: '1.125rem',
+            fontSize: '0.8rem',
             letterSpacing: '0.03em',
             textTransform: 'uppercase',
+            border: '1px solid rgba(1,30,65,0.08)',
+            boxShadow: '0 10px 24px rgba(245,168,0,0.22), 0 2px 8px rgba(1,30,65,0.08)',
           }}
         >
           Launch Close Tracker
